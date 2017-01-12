@@ -15,31 +15,34 @@ class PostController extends Controller
      */
     public function index()
     {
-        // Select from model?
-        // $posts = new Post;
+        // Select * from model?
+        // Needs get to actually run the command
         $posts = DB::table('posts')->get();
-        return view('welcome2', ['data' => $posts]);
+        dd($posts); // die and dump
+        return view('posts_view', ['data' => $posts]);
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * GET/create GOES HERE
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         //
+        return view('post_create');
     }
 
     /**
      * Store a newly created resource in storage.
-     *
+     * POST GOES HERE
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         //
+        dd($request);
     }
 
     /**
@@ -51,7 +54,7 @@ class PostController extends Controller
     public function show($id)
     {
         //
-        return view('welcome');
+        return view('posts_view');
     }
 
     /**
