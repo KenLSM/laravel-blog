@@ -6,5 +6,6 @@ I assume that you have already setup all the Laravel dependecies.
 ```bash
 cp .env.example .env
 composer install
+artisan key:generate
 npm install
 ```
